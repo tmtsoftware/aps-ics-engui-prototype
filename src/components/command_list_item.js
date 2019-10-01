@@ -13,7 +13,7 @@ class CommandListItem extends Component {
     constructor(props) {
         super(props);
         this.sendCommand = this.sendCommand.bind(this);
-
+        this.state = {positionMethod: "absolute", positionCounts: 25, positionCoords: "stage"}
     }
 
     renderArgs() {
@@ -47,12 +47,21 @@ class CommandListItem extends Component {
         }
 
 
-        axios.post('http://localhost:9000/command', {
-                commandSetupConfig: this.props.commandSetupConfig,
-                commandArgs: arr
-            }
-        ).then(response => console.log(response));
+        axios.post('http://localhost:9000/v1/gs/' + this.props.commandName, this.buildPostForm())
+            .then(response => console.log(response));
 
+    }
+
+    buildPostForm() {
+
+        return {
+            axesListString: this.props.axisName,
+            stageName: this.props.assemblyName,
+            positionsString: this.state.positionCounts,
+            positionMethod: this.state.positionMethod,
+            positionCoords: this.state.positionCoords
+
+        }
     }
 
     render() {

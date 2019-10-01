@@ -11,7 +11,16 @@ export default function(state = [], action) {
     switch (action.type) {
 
         case FETCH_COMMANDS:
-            return action.payload.data;
+
+            const commands = [
+                {commandName: "init", commandArgs: [], commandSetupConfig: ""},
+                {commandName: "home", commandArgs: [], commandSetupConfig: ""},
+                {commandName: "position", commandArgs: [], commandSetupConfig: ""},
+                {commandName: "motorOff", commandArgs: [], commandSetupConfig: ""}
+            ]
+
+
+            return commands;
         
     }
 

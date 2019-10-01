@@ -53,6 +53,7 @@ class CommandList extends Component {
                                  commandState={commandState}
                                  commandArgs={command.commandArgs}
                                  commandSetupConfig={command.commandSetupConfig}
+                                 assemblyName={this.props.assemblyName}
                                  />
             );
 

@@ -26,7 +26,7 @@ class Assembly extends Component {
                             <LoadButton />
                         </div>
                         <h3>Commands</h3>
-                        <CommandList />
+                        <CommandList assemblyName={this.props.assemblyName}/>
 
                         <div className="pull-right">
                             Mode: <button type="button" className="btn btn-success">Normal</button>

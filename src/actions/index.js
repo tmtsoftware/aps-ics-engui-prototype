@@ -15,11 +15,20 @@ export const CLEAR_ALL_CHECKBOXES = 'CLEAR_ALL_CHECKBOXES';
 
 export function fetchCommands() {
 
-    const request = axios.get(`${ROOT_URL}/commands`);
+    //const request = axios.get(`${ROOT_URL}/commands`);
+
+
+    const commands = [
+        {commandName: "init", commandArgs: "", commandSetupConfig: ""},
+        {commandName: "home", commandArgs: "", commandSetupConfig: ""},
+        {commandName: "position", commandArgs: "", commandSetupConfig: ""},
+        {commandName: "motorOff", commandArgs: "", commandSetupConfig: ""}
+        ]
+
 
     return {
         type: FETCH_COMMANDS,
-        payload: request
+        payload: commands
     };
 }
 
